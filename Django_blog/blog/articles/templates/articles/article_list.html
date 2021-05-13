@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Article_list</title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>Article_list</h1>
+            {%for article in articles%}
+            <div class="articles">
+            <div class="article">
+            <h2><a href="{%url 'articles:detail' slug=article.slug%}">{{ article.title }}</h2>
+            <p>{{ article.snippet }}</p>
+            <p>{{article.date}}</p>
+            <p class="author">by  {{article.autho}}</p>
+            </div>
+            </div>    
+            {% endfor %}
+        </div>
+     </body>
+</html>
